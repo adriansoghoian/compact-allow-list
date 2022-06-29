@@ -23,6 +23,8 @@ struct TreeElement {
 TreeElement[] memory myTree // indices to children in array
 ```
 
+The hash of each node is: `hash(leftChildHash, nodeValue, rightChildHash)`. 
+
 Normally the logic for generating the proof would live-client side, but these are implemented as part of the same package and exposed as view / pure functions for ease of use and debugging. 
 
 A `SamplePermissionedContract` is implemented demonstrating how this might be used. The contract has a reference to a `CompactAllowList` instance, and has a modifier like so:
